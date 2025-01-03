@@ -1,0 +1,72 @@
+<?php
+
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+
+
+
+//! for test only ----------------------------------------
+Route::get('/home', function () {
+    return view('home');
+});
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/blogs', function () {
+    return view('blogs');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
+Route::get('/contactus', function () {
+    return view('contactus');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/myaccount', function () {
+    return view('myaccount');
+});
+Route::get('/product', function () {
+    return view('product');
+});
+Route::get('/shop', function () {
+    return view('shop');
+});
+Route::get('/track', function () {
+    return view('track');
+});
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+Route::get('/wishlist', function () {
+    return view('wishlist');
+});
+//!---------------------------------------------------------
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';
