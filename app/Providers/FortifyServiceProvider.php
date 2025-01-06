@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\RecoveryCode;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -55,6 +56,18 @@ class FortifyServiceProvider extends ServiceProvider
         });
         Fortify::resetPasswordView(function () {
             return view('auth.reset-password');
+        });
+
+        Fortify::verifyEmailView(function () {
+            return view('auth.verify-email');
+        });
+
+        Fortify::confirmPasswordView(function () {
+            return view('auth.confirm-password');
+        });
+        Fortify::twoFactorChallengeView(function (Request $request) {
+           $recovery = $request->get('recovery',false);
+            return view('auth.two-factor-challenge',compact('recovery'));
         });
     }
 }

@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 
 //! for test only ----------------------------------------
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 // Route::get('/aboutus', function () {
 //     return view('aboutus');
 // });
@@ -51,19 +51,29 @@ Route::get('/home', function () {
 // });
 Route::get('/', function () {
     return view('welcome');
-    });
+});
 // Route::get('/wishlist', function () {
 //     return view('wishlist');
 // });
 //!---------------------------------------------------------
 
+// test middleware (is_admin)
+// Route::get('/home', function () {
+//     return view('home');
+// })->middleware(['auth', 'is_admin'])->name('dashboard');
 
+Route::middleware(['auth', 'verified'])->group(function () {
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/home', function () {
+        return view('home');
+    });
 
-Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
