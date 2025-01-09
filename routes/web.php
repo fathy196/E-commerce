@@ -1,11 +1,23 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProuductController;
 use Illuminate\Support\Facades\Route;
 
 
 
 //! for test only ----------------------------------------
+
+
+// Display the upload form
+Route::get('/upload', function () {
+    return view('upload');
+});
+
+// Handle the file upload
+Route::post('/upload', [ProuductController::class, 'uploadPhoto'])->name('photo.upload');
+
+
 // Route::get('/home', function () {
 //     return view('home');
 // });
@@ -72,8 +84,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    
-    
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

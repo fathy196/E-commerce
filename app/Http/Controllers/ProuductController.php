@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+// use Cloudinary;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+
 use Illuminate\Http\Request;
 
 class ProuductController extends Controller
@@ -60,5 +63,25 @@ class ProuductController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+
+
+
+    public function uploadPhoto(Request $request)
+    {
+        $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Max file size: 2MB
+        ]);
+
+        $uploadedFileUrl = Cloudinary::upload($request->file('photo')->getRealPath(), [
+            'folder' => 'uploads',
+        ])->getSecurePath();
+
+        return response()->json([
+            'success' => true,
+            'url' => $uploadedFileUrl,
+        ]);
     }
 }
