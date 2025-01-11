@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-dyDtnmxvDZaaTHx8AYirX7l7ZnWmSbHVsCO93aqmLvKAeESy1Be1Bo5DJ8vq5u4MbsLlwECQP1CcTGVF7BU+qQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        rel="stylesheet"
+    />
+    
     <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
 </head>
 
@@ -125,14 +129,41 @@
                                         </div>
                                     </div>
                                     <div class="header-sub-element row">
-                                        <a class="hidden-xs hidden-sm" href="{{ route('myaccount') }}"><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
-                                        <a href="{{ route('wishlist') }}"><img src="{{ asset('assets/img/icon-heart.png') }}" alt=""></a>
-                                        <div class="cart">
-                                            <a href="{{ route('cart') }}"><img src="{{ asset('assets/img/icon-cart.png') }}" alt=""></a>
-                                            <span class="count cart-count">0</span>
-                                        </a>
-                                        </div>
-                                        </a>
+
+                                        @if (Route::has('login'))
+                                            @auth
+                                          
+                                                <a class="hidden-xs hidden-sm" href="{{ url('/dashboard') }}"><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
+                                                <a href="{{ route('wishlist') }}"><img src="{{ asset('assets/img/icon-heart.png') }}" alt=""></a>
+                                                <div class="cart">
+                                                    <a href="{{ route('cart') }}"><img src="{{ asset('assets/img/icon-cart.png') }}" alt=""></a>
+                                                    <span class="count cart-count">0</span>
+                                                </a>
+                                                </div>
+                                                </a>
+                                            @else
+                                            <a
+    href="{{ route('login') }}"
+    class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+>
+    <i class="fas fa-sign-in-alt"></i>
+    Log in
+</a>
+
+@if (Route::has('register'))
+    <a
+        href="{{ route('register') }}"
+        class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+    >
+        <i class="fas fa-user-plus"></i> 
+        Register
+    </a>
+@endif
+
+                                            @endauth
+                                        @endif
+                                        
+                                      
                                     </div>
                                 </div>
                             </div>
