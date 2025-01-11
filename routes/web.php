@@ -7,16 +7,29 @@ use Illuminate\Support\Facades\Route;
 
 
 //! for test only ----------------------------------------
-// Route::get('/home', function () {
-//     return view('home');
-// });
-// Route::get('/aboutus', function () {
-//     return view('aboutus');
-// });
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
-// Route::get('/blog', function () {
-//     return view('blog');
-// });
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+Route::get('/blog', action: function () {
+    return view('blogs');
+})->name('blogs');
+
+Route::get('/Faqs', action: function () {
+    return view('faq');
+})->name('faq');
+
+Route::get('/contact', function () {
+    return view('contactus');
+})->name('contact');
 
 Route::get('/wishlist', function () {
     return view('wishlist');
