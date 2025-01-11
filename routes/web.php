@@ -4,11 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProuductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/w', function () {
-    return view('welcome');
-});
 
-//! for test only ----------------------------------------
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -52,13 +48,6 @@ Route::get('/checkout', function () {
 Route::get('/myaccount', function () {
     return view('myaccount');
 })->name('myaccount');
-
-
-
-// Route::get('/product', function () {
-//     return view('product');
-// });
-//!---------------------------------------------------------
 
 
 
