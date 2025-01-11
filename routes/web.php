@@ -18,9 +18,9 @@ Route::get('/upload', function () {
 Route::post('/upload', [ProuductController::class, 'uploadPhoto'])->name('photo.upload');
 
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
+Route::get('/home', function () {
+    return view('home');
+});
 // Route::get('/aboutus', function () {
 //     return view('aboutus');
 // });
@@ -76,9 +76,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/home', function () {
-        return view('home');
-    });
+    // Route::get('/home', function () {
+    //     return view('home');
+    // });
 
     Route::get('/dashboard', function () {
         return view('dashboard');
