@@ -133,7 +133,7 @@
                                         @if (Route::has('login'))
                                             @auth
                                           
-                                                <a class="hidden-xs hidden-sm" href="{{ url('/dashboard') }}"><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
+                                                <a class="hidden-xs hidden-sm" href="{{route('profile.edit') }}"><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
                                                 <a href="{{ route('wishlist') }}"><img src="{{ asset('assets/img/icon-heart.png') }}" alt=""></a>
                                                 <div class="cart">
                                                     <a href="{{ route('cart') }}"><img src="{{ asset('assets/img/icon-cart.png') }}" alt=""></a>
@@ -555,17 +555,9 @@
                                         <li class="email">
                                             <span>Contact@yourcompany.com</span>
                                         </li>
-                                        <li class="time">
-                                            <span>Mon-Sat 9:00pm - 5:00pm &nbsp;&nbsp;&nbsp; Sun : Closed</span>
-                                        </li>
+                                       
                                     </ul>
-                                    <div class="footer-social social">
-                                        <h3 class="footer-block-title">Follow us</h3>
-                                        <a href="#" class="fa fa-twitter"></a>
-                                        <a href="#" class="fa fa-dribbble"></a>
-                                        <a href="#" class="fa fa-behance"></a>
-                                        <a href="#" class="fa fa-instagram"></a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
@@ -576,10 +568,7 @@
                                         <li><a href="#">Home Audio & Theater</a></li>
                                         <li><a href="#">Camera, Photo & Video</a></li>
                                         <li><a href="#">Cell Phones & Accessories</a></li>
-                                        <li><a href="#">Headphones</a></li>
-                                        <li><a href="#">Video Games</a></li>
-                                        <li><a href="#">Bluetooth & Wireless Speakers</a></li>
-                                        <li><a href="#">Car Electronics</a></li>
+                                     
                                     </ul>
                                 </div>
                             </div>
@@ -587,21 +576,14 @@
                                 <div class="footer-block">
                                     <h3 class="footer-block-title">Customer Service</h3>
                                     <ul class="footer-block-content">
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="#">Track your Order</a></li>
-                                        <li><a href="#">Returns/Exchange</a></li>
-                                        <li><a href="#">FAQs</a></li>
-                                        <li><a href="#">Customer Service</a></li>
+                                        <li><a href="{{ route('track') }}">Track your Order</a></li>
+                                        <li><a href="{{ route('faq') }}">FAQs</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                 <div class="footer-block">
-                                    <div class="footer-block-phone">
-                                        <h3 class="footer-block-title">Hot Line</h3>
-                                        <p class="phone-desc">Call Us toll Free</p>
-                                        <p class="phone-light">(+123) 456 789 or (+123) 666 888</p>
-                                    </div>
+                                   
                                     <div class="footer-block-newsletter">
                                         <h3 class="footer-block-title">Subscription</h3>
                                         <p>Register now to get updates on promotions and coupons.</p>

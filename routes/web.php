@@ -70,9 +70,9 @@ Route::get('/myaccount', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    // Route::get('/home', function () {
-    //     return view('home');
-    // });
+    Route::get('/home', function () {
+        return view('home');
+    });
 
     Route::get('/dashboard', function () {
         return view('dashboard');
