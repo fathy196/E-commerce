@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //! for test only ----------------------------------------
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 
