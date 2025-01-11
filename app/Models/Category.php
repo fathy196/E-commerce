@@ -10,7 +10,6 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'description',
     ];
 
     //*  the relationship with the Product model

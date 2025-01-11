@@ -1,36 +1,18 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProuductController;
 use Illuminate\Support\Facades\Route;
 
 
 
 //! for test only ----------------------------------------
-
-Route::get('/aboutus', function () {
-    return view('aboutus');
-})->name('aboutus');
-
-Route::get('/blogs', function () {
-    return view('blogs');
-})->name('blogs');
-
-Route::get('/contactus', function () {
-    return view('contactus');
-})->name('contactus');
-
-Route::get('/faq', function () {
-    return view('faq');
-})->name('faq');
-
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
-
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
+// Route::get('/home', function () {
+//     return view('home');
+// });
+// Route::get('/aboutus', function () {
+//     return view('aboutus');
+// });
 
 // Route::get('/blog', function () {
 //     return view('blog');
@@ -67,9 +49,9 @@ Route::get('/myaccount', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/home', function () {
-        return view('home');
-    });
+    // Route::get('/home', function () {
+    //     return view('home');
+    // });
 
     Route::get('/dashboard', function () {
         return view('dashboard');
