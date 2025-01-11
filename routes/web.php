@@ -6,54 +6,57 @@ use Illuminate\Support\Facades\Route;
 
 
 //! for test only ----------------------------------------
-// Route::get('/home', function () {
-//     return view('home');
-// });
-// Route::get('/aboutus', function () {
-//     return view('aboutus');
-// });
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+Route::get('/blogs', function () {
+    return view('blogs');
+})->name('blogs');
+
+Route::get('/contactus', function () {
+    return view('contactus');
+})->name('contactus');
+
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
 
 // Route::get('/blog', function () {
 //     return view('blog');
 // });
 
-// Route::get('/blogs', function () {
-//     return view('blogs');
-// });
+Route::get('/wishlist', function () {
+    return view('wishlist');
+})->name('wishlist');
 
-// Route::get('/cart', function () {
-//     return view('cart');
+// Route::get('/track', function () {
+//     return view('track');
 // });
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
 
 // Route::get('/checkout', function () {
 //     return view('checkout');
 // });
 
-// Route::get('/contactus', function () {
-//     return view('contactus');
-// });
 
-// Route::get('/faq', function () {
-//     return view('faq');
-// });
-
-// Route::get('/myaccount', function () {
-//     return view('myaccount');
-// });
+Route::get('/myaccount', function () {
+    return view('myaccount');
+})->name('myaccount');
 // Route::get('/product', function () {
 //     return view('product');
-// });
-// Route::get('/shop', function () {
-//     return view('shop');
-// });
-// Route::get('/track', function () {
-//     return view('track');
-// });
-Route::get('/', function () {
-    return view('welcome');
-});
-// Route::get('/wishlist', function () {
-//     return view('wishlist');
 // });
 //!---------------------------------------------------------
 
@@ -72,8 +75,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    
-    
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

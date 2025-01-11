@@ -23,79 +23,13 @@
         <div class="menu-push">
             <span class="close-left js-close"><i class="icon-close f-20"></i></span>
             <div class="clearfix"></div>
-            <form role="search" method="get" id="searchform" class="searchform" action="/search">
-                <div>
-                    <label class="screen-reader-text" for="q"></label>
-                    <input type="text" placeholder="Search for products" value="" name="q" id="q" autocomplete="off">
-                    <input type="hidden" name="type" value="product">
-                    <button type="submit" id="searchsubmit"><i class="ion-ios-search-strong"></i></button>
-                </div>
-            </form>
             <ul class="nav-home5 js-menubar">
-                <li class="level1 active dropdown"><a href="#">Home</a></li>
-                <li class="level1 active dropdown"><a href="#">Shop</a>
-                    <span class="icon-sub-menu"></span>
-                    <div class="menu-level1 js-open-menu">
-                        <ul class="level1">
-                            <li class="level2">
-                                <a href="#">Shop Layout</a>
-                                <ul class="menu-level-2">
-                                    <li class="level3"><a href="shopgrid_v2.html" title="">Shop Grid v.2</a></li>
-                                </ul>
-                            </li>
-                            <li class="level2">
-                                <a href="#">Categories</a>
-                                <ul class="menu-level-2">
-                                    <li class="level3"><a href="cat_left_sidebar.html" title="">Categories Left Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li class="level2">
-                                <a href="#">Single Product Type</a>
-                                <ul class="menu-level-2">
-                                    <li class="level3"><a href="simple.html">Simple</a></li>
-                                    <li class="level3"><a href="outofstock.html">Out of stock</a></li>
-                                    <li class="level3"><a href="onsale.html">On sale</a></li>
-                                </ul>
-                            </li>
-                            <li class="level2">
-                                <a href="#">Single Product Layout</a>
-                                <ul class="menu-level-2">
-                                    <li class="level3"><a href="product_extended.html" title="">Product Extended</a></li>
-                                </ul>
-                            </li>
-                            <li class="level2">
-                                <a href="#">Other Pages</a>
-                                <ul class="menu-level-2">
-                                    <li class="level3"><a href="cart.html" title="">Cart</a></li>
-                                    <li class="level3"><a href="wishlist.html" title="">My Wishlist</a></li>
-                                    <li class="level3"><a href="checkout.html" title="">Checkout</a></li>
-                                    <li class="level3"><a href="myaccount.html" title="">My Account</a></li>
-                                    <li class="level3"><a href="track.html" title="">Track Your Order</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                </li>
-                <li class="level1">
-                    <a href="#">Pages</a>
-                    <span class="icon-sub-menu"></span>
-                    <ul class="menu-level1 js-open-menu">
-                        <li class="level2"><a href="aboutus.html" title="About Us ">About Us </a></li>
-                        <li class="level2"><a href="contactus.html" title="Contact">Contact</a></li>
-                        <li class="level2"><a href="faq.html" title="FAQs">FAQs</a></li>
-                        <li class="level2"><a href="404.html" title="404">404</a></li>
-                        <li class="level2"><a href="commingsoon.html" title="Coming Soon">Coming Soon</a></li>
-                    </ul>
-                </li>
-                <li class="level1">
-                    <a href="#">Blog</a>
-                    <span class="icon-sub-menu"></span>
-                    <ul class="menu-level1 js-open-menu">
-                        <li class="level2"><a href="blog_grid.html" title="Blog Gird">Blog Gird</a></li>
-                        <li class="level2"><a href="blog-single-post.html" title="Blog Single Post">Blog Single Post</a></li>
-                    </ul>
-                </li>
+                <li class="level1 active dropdown"><a href="{{ route('home') }}">Home</a></li>
+                <li class="level1 active dropdown"><a href="{{ route('shop') }}">Shop</a></li>
+                <li class="level1 active dropdown"><a href="{{ route('aboutus') }}">About Us</a></li>
+                <li class="level1 active dropdown"><a href="{{ route('contactus') }}">Contact</a></li>
+                <li class="level1 active dropdown"><a href="{{ route('faq') }}">FAQs</a></li>
+                <li class="level1"><a href="{{ route('blogs') }}">Blog</a></li>
             </ul>
         </div>
     </div>
@@ -173,14 +107,7 @@
                                           <button class="button_search" type="button"><i class="ion-ios-search-strong"></i></button>
                                 </span>
                             </form>
-                            <div class="tags">
-                                <span>Most searched :</span>
-                                <a href="#">umbrella</a>
-                                <a href="#">hair accessories </a>
-                                <a href="#">diamond</a>
-                                <a href="#"> painting slime</a>
-                                <a href="#">sunglasses</a>
-                            </div>
+                           
                         </div>
                             <div class="col-lg-3  col-md-3 col-sm-6 col-xs-6 v-center header-sub">
                                 <div class="right-panel">
@@ -194,55 +121,13 @@
                                         </div>
                                     </div>
                                     <div class="header-sub-element row">
-                                        <a class="hidden-xs hidden-sm" href=""><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('assets/img/icon-heart.png') }}" alt=""></a>
+                                        <a class="hidden-xs hidden-sm" href="{{ route('myaccount') }}"><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
+                                        <a href="{{ route('wishlist') }}"><img src="{{ asset('assets/img/icon-heart.png') }}" alt=""></a>
                                         <div class="cart">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="label5">
-                                            <img src="{{ asset('assets/img/icon-cart.png') }}" alt="">
+                                            <a href="{{ route('cart') }}"><img src="{{ asset('assets/img/icon-cart.png') }}" alt="">
                                             <span class="count cart-count">0</span>
-                                        </a>
-                                            <div class="dropdown-menu dropdown-cart">
-                                                <ul class="mini-products-list">
-                                                    <li class="item-cart">
-                                                        <div class="product-img-wrap">
-                                                            <a href="#"><img src="{{ asset('assets/img/cart1.jpg') }}" alt="" class="img-reponsive"></a>
-                                                        </div>
-                                                        <div class="product-details">
-                                                            <div class="inner-left">
-                                                                <div class="product-name"><a href="#">Harman Kardon Onyx Studio </a></div>
-                                                                <div class="product-price">
-                                                                    $ 60.00 <span>( x2)</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#" class="e-del"><i class="ion-ios-close-empty"></i></a>
-                                                    </li>
-                                                    <li class="item-cart">
-                                                        <div class="product-img-wrap">
-                                                            <a href="#"><img src="{{ asset('assets/img/cart1.jpg') }}" alt="" class="img-reponsive"></a>
-                                                        </div>
-                                                        <div class="product-details">
-                                                            <div class="inner-left">
-                                                                <div class="product-name"><a href="#">Harman Kardon Onyx Studio </a></div>
-                                                                <div class="product-price">
-                                                                    $ 60.00 <span>( x2)</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#" class="e-del"><i class="ion-ios-close-empty"></i></a>
-                                                    </li>
-                                                </ul>
-                                                <div class="bottom-cart">
-                                                    <div class="cart-price">
-                                                        <span>Subtotal</span>
-                                                        <span class="price-total">$ 120.00</span>
-                                                    </div>
-                                                    <div class="button-cart">
-                                                        <a href="#" class="cart-btn btn-viewcart">View Cart</a>
-                                                        <a href="#" class="cart-btn e-checkout btn-gradient">Checkout</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </a>
+                                          
                                         </div>
                                         <a href="#" class="hidden-md hidden-lg icon-pushmenu js-push-menu">
                                         <i class="fa fa-bars f-15"></i>
@@ -502,72 +387,16 @@
                                         </button>
                                         <div class="collapse navbar-collapse" id="myNavbar">
                                             <ul class="nav navbar-nav js-menubar">
-                                                <li class="level1 active hassub"><a href="#">Home</a></li>
-                                                <li class="level1 dropdown hassub"><a href="#">Shop<span class="h-ribbon h-pos e-green">sale</span></a>
-                                                    <span class="plus js-plus-icon"></span>
-                                                    <div class="menu-level-1 dropdown-menu">
-                                                        <ul class="level1">
-                                                            <li class="level2 col-4">
-                                                                <a href="#">Shop Layout</a>
-                                                                <ul class="menu-level-2">
-                                                                    <li class="level3"><a href="shopgrid_v2.html" title="">Shop Grid v.2</a><span class="h-ribbon v3 e-red h-pos">Hot</span></li>
-                                                                </ul>
-                                                                <a href="#">Categories</a>
-                                                                <ul class="menu-level-2">
-                                                                    <li class="level3"><a href="cat_left_sidebar.html" title="">Categories Left Sidebar</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="level2 col-4">
-                                                                <a href="# ">Single Product Type</a>
-                                                                <ul class="menu-level-2">
-                                                                    <li class="level3"><a href="simple.html">Simple</a></li>
-                                                                    <li class="level3"><a href="outofstock.html">Out of stock</a></li>
-                                                                    <li class="level3"><a href="onsale.html">On sale</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="level2 col-4">
-                                                                <a href="#">Single Product Layout</a>
-                                                                <ul class="menu-level-2">
-                                                                    <li class="level3"><a href="product_extended.html" title="">Product Extended</a><span class="h-ribbon v3 e-red h-pos">Hot</span></li>
-                                                                </ul>
-                                                                <a href="#">Other Pages</a>
-                                                                <ul class="menu-level-2">
-                                                                    <li class="level3"><a href="cart.html" title="">Cart</a></li>
-                                                                    <li class="level3"><a href="wishlist.html" title="">My Wishlist</a></li>
-                                                                    <li class="level3"><a href="checkout.html" title="">Checkout</a></li>
-                                                                    <li class="level3"><a href="myaccount.html" title="">My Account</a></li>
-                                                                    <li class="level3"><a href="track.html" title="">Track Your Order</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </li>
-                                                <li class="level1 active dropdown">
-                                                    <a href="#">Pages<span class="h-ribbon h-pos e-skyblue">new</span></a>
-                                                    <span class="plus js-plus-icon"></span>
-                                                    <ul class="dropdown-menu menu-level-1">
-                                                        <li class="level2"><a href="aboutus.html" title="About Us ">About Us </a></li>
-                                                        <li class="level2"><a href="contactus.html" title="Contact">Contact</a></li>
-                                                        <li class="level2"><a href="faq.html" title="FAQs">FAQs</a></li>
-                                                        <li class="level2"><a href="404.html" title="404">404</a></li>
-                                                        <li class="level2"><a href="commingsoon.html" title="Coming Soon">Coming Soon</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="level1 active dropdown">
-                                                    <a href="#">Blog</a>
-                                                    <ul class="dropdown-menu menu-level-1">
-                                                        <li class="level2"><a href="blog_grid.html" title="Blog Gird">Blog Gird</a></li>
-                                                        <li class="level2"><a href="blog-single-post.html" title="Blog Single Post">Blog Single Post</a></li>
-                                                    </ul>
-                                                </li>
+                                                <li class="level1 active hassub"><a href="{{ route('home') }}">Home</a></li>
+                                                <li class="level1 dropdown hassub"><a href="{{ route('shop') }}">Shop<span class="h-ribbon h-pos e-green">sale</span></a></li>
+                                                <li class="level1 dropdown hassub"><a href="{{ route('shop') }}">About Us</a></li>
+                                                <li class="level1 dropdown hassub"><a href="{{ route('contactus') }}">Contact</a></li>
+                                                <li class="level1 dropdown hassub"><a href="{{ route('faq') }}">FAQs</a></li>
+                                                <li class="level1 active dropdown"><a href="{{ route('blogs') }}">Blog</a></li>
                                             </ul>
                                         </div>
                                     </nav>
-                                    <div class="header-bottom-right hidden-xs hidden-sm">
-                                        <img src="{{ asset('assets/img/icon-ship.png') }}" alt="" class="img-reponsive">
-                                        <span>Free Shipping on Orders $100</span>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
