@@ -9,9 +9,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
+Route::get('/shop', [ProuductController::class, 'index'])->name('shop');
 
 Route::get('/aboutus', function () {
     return view('aboutus');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use Cloudinary;
+use App\Models\Product;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 use Illuminate\Http\Request;
@@ -14,7 +14,9 @@ class ProuductController extends Controller
      */
     public function index()
     {
-        //
+
+        $products = Product::with('category')->get();
+        return view('shop', compact('products'));
     }
 
     /**
