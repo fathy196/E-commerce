@@ -67,10 +67,6 @@ class ProuductController extends Controller
         //
     }
 
-
-
-
-
     public function uploadPhoto(Request $request)
     {
         $request->validate([
