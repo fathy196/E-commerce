@@ -155,16 +155,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hot-line e-gradient">
-                                    <p>Hotline</p>
-                                    <div class="flex align-center tele">
-                                        <img src="{{ asset('assets/img/feature/hotline.png') }}" alt="">
-                                        <div class="phone-number">
-                                            <p>(+123) 456 789 </p>
-                                            <p>(+123) 666 888</p>
-                                        </div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>
@@ -173,8 +164,6 @@
                     <div class="cmt-title text-center abs">
                         <ul class="nav nav-tabs v3 text-center">
                             <li class="active"><a data-toggle="pill" href="#desc">Description</a></li>
-                            <li><a data-toggle="pill" href="#info">Specification</a></li>
-                            <li><a data-toggle="pill" href="#review">Reviews</a></li>
                         </ul>
                     </div>
                 <div class="tab-content">
@@ -213,13 +202,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="info" class="tab-pane fade in">
-                        
-                    </div>
-                    <div id="review" class="tab-pane fade in ">
-                        
-                    </div>
-
+         
                 </div>
             </div>
             </div>

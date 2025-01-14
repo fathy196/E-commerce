@@ -48,7 +48,7 @@ Route::get('/myaccount', function () {
 })->name('myaccount');
 
 
-
+Route::get('/products/{id}', [ProuductController::class, 'show'])->name('product.show');
 
 // test middleware (is_admin)
 // Route::get('/home', function () {
