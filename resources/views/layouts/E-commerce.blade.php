@@ -16,11 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-dyDtnmxvDZaaTHx8AYirX7l7ZnWmSbHVsCO93aqmLvKAeESy1Be1Bo5DJ8vq5u4MbsLlwECQP1CcTGVF7BU+qQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        rel="stylesheet"
-    />
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
 </head>
 
@@ -55,68 +52,78 @@
                                         class="img-reponsive"></a>
                             </div>
                             <div class="col-lg-7 col-md-7 v-center header-search hidden-xs hidden-sm">
-                            <form method="get" class="searchform ajax-search" action="/search" role="search">
-                                <input type="hidden" name="type" value="product">
-                                <input type="text" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" name="q" class="form-control" placeholder="i’m shoping for...">
-                                <ul class="list-product-search hidden-xs hidden-sm">
-                                    <li>
-                                        <a class="flex align-center" href="">
-                                            <div class="product-img">
-                                                <img src="{{ asset('assets/img/product/iphonex.jpg') }}" alt="">
-                                            </div>
-                                            <h3 class="product-title">Notebook Black Spire Smartphone Black 2.0</h3>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="flex align-center" href="">
-                                            <div class="product-img">
-                                                <img src="{{ asset('assets/img/product/sound.jpg') }}" alt="">
-                                            </div>
-                                            <h3 class="product-title">Smartphone 6S 64GB LTE</h3>
-                                        </a>
-                                    <li>
-                                        <a class="flex align-center" href="">
-                                            <div class="product-img">
-                                                <img src="{{ asset('assets/img/product/phone4.jpg') }}" alt="">
-                                            </div>
-                                            <h3 class="product-title">Notebook Black Spire Smartphone Black 2.0</h3>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="flex align-center" href="">
-                                            <div class="product-img">
-                                                <img src="{{ asset('assets/img/product/phone5.jpg') }}" alt="">
-                                            </div>
-                                            <h3 class="product-title">Smartphone 6S 64GB LTE </h3>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="flex align-center" href="">
-                                            <div class="product-img">
-                                                <img src="{{ asset('assets/img/product/phone1.jpg')}}" alt="">
-                                            </div>
-                                            <h3 class="product-title">Notebook Black Spire Smartphone Black 2.0</h3>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="search-panel">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href='#'>All categories <span class="fa fa-caret-down"></span></a>
-                                    <ul id="category" class="dropdown-menu dropdown-category">
-                                        <li><a href="#">TV & Video</a></li>
-                                        <li><a href="#">Home Audio & Theater</a></li>
-                                        <li><a href="#">Camera, Photo & Video</a></li>
-                                        <li><a href="#">Cell Phones & Accessories</a></li>
-                                        <li><a href="#">Headphones</a></li>
-                                        <li><a href="#">Car Electronics</a></li>
-                                        <li><a href="#">Electronics Showcase</a></li>
+                                <form method="get" class="searchform ajax-search" action="/search" role="search">
+                                    <input type="hidden" name="type" value="product">
+                                    <input type="text" onblur="if (this.value=='') this.value = this.defaultValue"
+                                        onfocus="if (this.value==this.defaultValue) this.value = ''" name="q"
+                                        class="form-control" placeholder="i’m shoping for...">
+                                    <ul class="list-product-search hidden-xs hidden-sm">
+                                        <li>
+                                            <a class="flex align-center" href="">
+                                                <div class="product-img">
+                                                    <img src="{{ asset('assets/img/product/iphonex.jpg') }}"
+                                                        alt="">
+                                                </div>
+                                                <h3 class="product-title">Notebook Black Spire Smartphone Black 2.0</h3>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="flex align-center" href="">
+                                                <div class="product-img">
+                                                    <img src="{{ asset('assets/img/product/sound.jpg') }}"
+                                                        alt="">
+                                                </div>
+                                                <h3 class="product-title">Smartphone 6S 64GB LTE</h3>
+                                            </a>
+                                        <li>
+                                            <a class="flex align-center" href="">
+                                                <div class="product-img">
+                                                    <img src="{{ asset('assets/img/product/phone4.jpg') }}"
+                                                        alt="">
+                                                </div>
+                                                <h3 class="product-title">Notebook Black Spire Smartphone Black 2.0</h3>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="flex align-center" href="">
+                                                <div class="product-img">
+                                                    <img src="{{ asset('assets/img/product/phone5.jpg') }}"
+                                                        alt="">
+                                                </div>
+                                                <h3 class="product-title">Smartphone 6S 64GB LTE </h3>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="flex align-center" href="">
+                                                <div class="product-img">
+                                                    <img src="{{ asset('assets/img/product/phone1.jpg') }}"
+                                                        alt="">
+                                                </div>
+                                                <h3 class="product-title">Notebook Black Spire Smartphone Black 2.0
+                                                </h3>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </div>
-                                <span class="input-group-btn">
-                                          <button class="button_search" type="button"><i class="ion-ios-search-strong"></i></button>
-                                </span>
-                            </form>
-                         
-                        </div>
+                                    <div class="search-panel">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href='#'>All
+                                            categories <span class="fa fa-caret-down"></span></a>
+                                        <ul id="category" class="dropdown-menu dropdown-category">
+                                            <li><a href="#">TV & Video</a></li>
+                                            <li><a href="#">Home Audio & Theater</a></li>
+                                            <li><a href="#">Camera, Photo & Video</a></li>
+                                            <li><a href="#">Cell Phones & Accessories</a></li>
+                                            <li><a href="#">Headphones</a></li>
+                                            <li><a href="#">Car Electronics</a></li>
+                                            <li><a href="#">Electronics Showcase</a></li>
+                                        </ul>
+                                    </div>
+                                    <span class="input-group-btn">
+                                        <button class="button_search" type="button"><i
+                                                class="ion-ios-search-strong"></i></button>
+                                    </span>
+                                </form>
+
+                            </div>
                             <div class="col-lg-3  col-md-3 col-sm-6 col-xs-6 v-center header-sub">
                                 <div class="right-panel">
                                     <div class="header-sub-element hidden-xs hidden-sm">
@@ -132,38 +139,41 @@
 
                                         @if (Route::has('login'))
                                             @auth
-                                          
-                                                <a class="hidden-xs hidden-sm" href="{{route('profile.edit') }}"><img src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
-                                                <a href="{{ route('wishlist') }}"><img src="{{ asset('assets/img/icon-heart.png') }}" alt=""></a>
+
+                                                <a class="hidden-xs hidden-sm" href="{{ route('profile.edit') }}"><img
+                                                        src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
+                                                <a href="{{ route('wishlist') }}"><img
+                                                        src="{{ asset('assets/img/icon-heart.png') }}"
+                                                        alt=""></a>
                                                 <div class="cart">
-                                                    <a href="{{ route('cart') }}"><img src="{{ asset('assets/img/icon-cart.png') }}" alt=""></a>
+                                                    <a href="{{ route('cart') }}"><img
+                                                            src="{{ asset('assets/img/icon-cart.png') }}"
+                                                            alt=""></a>
                                                     <span class="count cart-count">0</span>
-                                                </a>
+                                                    </a>
                                                 </div>
                                                 </a>
                                             @else
-                                            <a
-    href="{{ route('login') }}"
-    class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
->
-    <i class="fas fa-sign-in-alt"></i>
-    Log in
-</a>
-
-@if (Route::has('register'))
-    <a
-        href="{{ route('register') }}"
-        class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-    >
-        <i class="fas fa-user-plus"></i> 
-        Register
-    </a>
-@endif
+                                            <a href="{{ route('login') }}"
+                                            class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                            style="display: inline-flex; align-items: center; font-size: 2rem;">
+                                            <i class="fas fa-sign-in-alt" style="font-size: 2rem;"></i>
+                                            <span style="margin-left: 5px;">Log in</span>
+                                         </a>
+                                         
+                                         @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                               class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                               style="display: inline-flex; align-items: center; font-size: 2rem;">
+                                               <i class="fas fa-user-plus" style="font-size: 2rem;"></i>
+                                               <span style="margin-left: 5px;">Register</span>
+                                            </a>
+                                         @endif
 
                                             @endauth
                                         @endif
-                                        
-                                      
+
+
                                     </div>
                                 </div>
                             </div>
@@ -505,18 +515,25 @@
                                         </button>
                                         <div class="collapse navbar-collapse" id="myNavbar">
                                             <ul class="nav navbar-nav js-menubar">
-                                                <li class="level1 active hassub"><a href="{{ route('home') }}">Home</a></li>
-                                                <li class="level1 dropdown hassub"><a href="{{ route('shop') }}">Shop<span class="h-ribbon h-pos e-green">sale</span></a></li>
-                                                <li class="level1 active hassub"><a href="{{ route('home') }}">About Us</a></li>
-                                                <li class="level1 active hassub"><a href="{{ route('home') }}">Contact</a></li>
-                                                <li class="level1 active hassub"><a href="{{ route('home') }}">FAQs</a></li>
-                                                <li class="level1 active hassub"><a href="{{ route('home') }}">Blogs</a></li>
+                                                <li class="level1 active hassub"><a
+                                                        href="{{ route('home') }}">Home</a></li>
+                                                <li class="level1 dropdown hassub"><a
+                                                        href="{{ route('shop') }}">Shop<span
+                                                            class="h-ribbon h-pos e-green">sale</span></a></li>
+                                                <li class="level1 active hassub"><a href="{{ route('home') }}">About
+                                                        Us</a></li>
+                                                <li class="level1 active hassub"><a
+                                                        href="{{ route('home') }}">Contact</a></li>
+                                                <li class="level1 active hassub"><a
+                                                        href="{{ route('home') }}">FAQs</a></li>
+                                                <li class="level1 active hassub"><a
+                                                        href="{{ route('home') }}">Blogs</a></li>
 
-                                        
+
                                             </ul>
                                         </div>
                                     </nav>
-                                
+
 
 
 
@@ -555,9 +572,9 @@
                                         <li class="email">
                                             <span>Contact@yourcompany.com</span>
                                         </li>
-                                       
+
                                     </ul>
-                                   
+
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
@@ -568,7 +585,7 @@
                                         <li><a href="#">Home Audio & Theater</a></li>
                                         <li><a href="#">Camera, Photo & Video</a></li>
                                         <li><a href="#">Cell Phones & Accessories</a></li>
-                                     
+
                                     </ul>
                                 </div>
                             </div>
@@ -583,7 +600,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                 <div class="footer-block">
-                                   
+
                                     <div class="footer-block-newsletter">
                                         <h3 class="footer-block-title">Subscription</h3>
                                         <p>Register now to get updates on promotions and coupons.</p>
