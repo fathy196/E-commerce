@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProuductController;
 use Illuminate\Support\Facades\Route;
@@ -73,6 +74,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 // require __DIR__ . '/auth.php';
