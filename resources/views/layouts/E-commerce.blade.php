@@ -146,7 +146,7 @@
                                                         src="{{ asset('assets/img/icon-heart.png') }}"
                                                         alt=""></a>
                                                 <div class="cart">
-                                                    <a href="{{ route('cart') }}"><img
+                                                    <a href="{{ route('cart.view') }}"><img
                                                             src="{{ asset('assets/img/icon-cart.png') }}"
                                                             alt=""></a>
                                                     <span class="count cart-count">0</span>

@@ -31,5 +31,33 @@ class CartController extends Controller
     // return response()->json(['message' => 'Item added to cart', 'cartItem' => $cartItem]);
     return redirect()->route('shop')->with('status', 'Item added to cart');
 }
+public function viewCart()
+{
+    $cartItems = Cart::with('product')->where('user_id', Auth::id())->get();
+    $total = $cartItems->sum(fn ($item) => $item->quantity * $item->price);
 
+    return view('cart', compact('cartItems', 'total'));
 }
+public function updateCart(Request $request)
+{
+    // dd($request->all());
+    $quantities = $request->input('quantity'); 
+
+    foreach ($quantities as $productId => $quantity) {
+        Cart::where('user_id', Auth::id())
+            ->where('product_id', $productId)
+            ->update(['quantity' => $quantity]);
+    }
+
+    return redirect()->route('cart.view')->with('status', 'Cart updated successfully');
+}
+public function removeFromCart($id)
+{
+    $cartItem = Cart::findOrFail($id);
+    $cartItem->delete();
+    
+    
+    return redirect()->route('cart.view')->with('status', 'Item removed from cart');
+}
+}
+    
