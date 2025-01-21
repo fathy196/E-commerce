@@ -15,53 +15,66 @@
                         <div class="cmt-title text-center abs">
                             <h1 class="page-title v2">Cart</h1>
                         </div>
-                        <form action="{{ route('cart.update') }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <div class="table-responsive">
-                                <table class="table cart-table">
-
-                                    <tbody>
-                                        @foreach ($cartItems as $item)
-                                            <tr class="item_cart">
-                                                <td class="product-name flex align-center">
-                                                    <!-- Button to remove item (DELETE) -->
-                                                    <button class="btn-del" onclick="removeItem({{ $item->id }})">
-                                                        <i class="ion-ios-close-empty"></i>
-                                                    </button>
-                                                    <div class="product-img">
-                                                        <img src="{{ asset('assets/img/product/sound2.jpg') }}"
-                                                            alt="Futurelife">
-                                                    </div>
-                                                    <div class="product-info">
-                                                        <a href="#" title="">{{ $item->product->name }} </a>
-                                                    </div>
-                                                </td>
-
-                                                <td class="bcart-quantity single-product-detail">
-                                                    <div class="single-product-info">
-                                                        <div class="e-quantity">
-                                                            <input type="number" name="quantity[{{ $item->product_id }}]"
-                                                                value="{{ $item->quantity }}" title="Qty"
-                                                                class="qty input-text js-number" size="4">
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="total-price">
-                                                    <p class="price">{{ $item->quantity * $item->price }}</p>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                        @if ($cartItems->isEmpty())
+                            <div class="empty-cart"
+                                style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; text-align: center;">
+                                <i class="fas fa-box-open" style="font-size: 100px; color: #ccc; margin-bottom: 20px;"></i>
+                                <p style="font-size: 18px; color: #666;">Your cart is empty. Start shopping now!</p>
+                                <!-- Shop Button -->
+                                <div class="slide-content " style="margin-top: 200px;">
+                                    <a href="{{ route('shop') }}" class="slide-btn e-yl-gradient">Shop now<i class="ion-ios-arrow-forward"></i></a>
+                                </div>
                             </div>
-                            <div class="table-cart-bottom">
+                        @else
+                            <form action="{{ route('cart.update') }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <div class="table-responsive">
+                                    <table class="table cart-table">
 
-                                <a href="#" class="btn btn-update">Total price is : {{ $total }}</a>
+                                        <tbody>
+
+                                            @foreach ($cartItems as $item)
+                                                <tr class="item_cart">
+                                                    <td class="product-name flex align-center">
+                                                        <!-- Button to remove item (DELETE) -->
+                                                        <button class="btn-del" onclick="removeItem({{ $item->id }})">
+                                                            <i class="ion-ios-close-empty"></i>
+                                                        </button>
+                                                        <div class="product-img">
+                                                            <img src="{{ asset('assets/img/product/sound2.jpg') }}"
+                                                                alt="Futurelife">
+                                                        </div>
+                                                        <div class="product-info">
+                                                            <a href="#" title="">{{ $item->product->name }} </a>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="bcart-quantity single-product-detail">
+                                                        <div class="single-product-info">
+                                                            <div class="e-quantity">
+                                                                <input type="number"
+                                                                    name="quantity[{{ $item->product_id }}]"
+                                                                    value="{{ $item->quantity }}" title="Qty"
+                                                                    class="qty input-text js-number" size="4">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="total-price">
+                                                        <p class="price">{{ $item->quantity * $item->price }}</p>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-cart-bottom">
+
+                                    <a href="#" class="btn btn-update">Total price is : {{ $total }}</a>
 
 
-                                {{-- coupon discount --}}
-                                {{-- <form class="form_coupon" action="#" method="post">
+                                    {{-- coupon discount --}}
+                                    {{-- <form class="form_coupon" action="#" method="post">
                                     <input type="email" value="" placeholder="Coupon code" name="EMAIL"
                                         id="mail" class="newsletter-input form-control">
                                     <div class="input-icon">
@@ -71,9 +84,10 @@
                                         Apply coupon
                                     </button>
                                 </form> --}}
-                                <button type="submit" class="btn btn-update">Update cart</button>
-                            </div>
-                        </form>
+                                    <button type="submit" class="btn btn-update">Update cart</button>
+                                </div>
+                            </form>
+                        @endif
 
                     </div>
                 </div>
@@ -281,7 +295,7 @@
 
 
 
-{{-- this script for handling remove cart --}}
+    {{-- this script for handling remove cart --}}
     <script>
         function removeItem(itemId) {
             if (confirm('Are you sure you want to remove this item?')) {
@@ -298,5 +312,5 @@
                 });
             }
         }
-        </script>
+    </script>
 @endsection

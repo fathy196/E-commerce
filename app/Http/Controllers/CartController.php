@@ -21,7 +21,8 @@ class CartController extends Controller
             'product_id' => $product->id,
         ],
         [
-            'quantity' => DB::raw('quantity + ' . $request->quantity),
+            //handle blade bug
+            // 'quantity' => DB::raw('quantity + ' . $request->quantity),
             'price' => $product->price,
         ]
     );
@@ -29,7 +30,7 @@ class CartController extends Controller
     $cartItem->refresh();
 
     // return response()->json(['message' => 'Item added to cart', 'cartItem' => $cartItem]);
-    return redirect()->route('shop')->with('status', 'Item added to cart');
+    return redirect()->back()->with('status', 'Item added to cart');
 }
 public function viewCart()
 {
@@ -57,7 +58,7 @@ public function removeFromCart($id)
     $cartItem->delete();
     
     
-    return redirect()->route('cart.view')->with('status', 'Item removed from cart');
+    return redirect()->route('cart.view')->with('status', 'product removed from cart');
 }
 }
     

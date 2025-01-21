@@ -142,7 +142,7 @@
 
                                                 <a class="hidden-xs hidden-sm" href="{{ route('profile.edit') }}"><img
                                                         src="{{ asset('assets/img/icon-user.png') }}" alt=""></a>
-                                                <a href="{{ route('wishlist') }}"><img
+                                                <a href="{{ route('wishlist.index') }}"><img
                                                         src="{{ asset('assets/img/icon-heart.png') }}"
                                                         alt=""></a>
                                                 <div class="cart">

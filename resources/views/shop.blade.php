@@ -268,20 +268,28 @@
                                                         <div class="product-price"><span>$1,215.00</span></div>
                                                     </div>
                                                     <div class="product-bottom-group">
-                                                        <form action="{{ route(name: 'cart.add') }}" method="POST"
+                                                        <form action="{{ route('cart.add') }}" method="POST"
                                                             class="add-to-cart-form">
                                                             @csrf
                                                             <input type="hidden" name="product_id"
                                                                 value="{{ $product->id }}">
-                                                            <input type="number" name="quantity" value="1"
-                                                                min="1" class="quantity-input">
+                                                            {{-- <input type="number" name="quantity" value="1"
+                                                                min="1" class="quantity-input"> --}}
                                                             <button type="submit" class="btn-icon">
                                                                 <span class="icon-bg icon-cart"></span>
                                                             </button>
                                                         </form>
-                                                        <a href="#" class="btn-icon">
-                                                            <span class="icon-bg icon-wishlist"></span>
-                                                        </a>
+
+                                                        <form action="{{ route('wishlist.add', $product->id) }}"
+                                                            method="POST" style="display: inline;">
+                                                            @csrf
+                                                            <input type="hidden" name="product_id"
+                                                                value="{{ $product->id }}">
+                                                            {{-- @dump(session('status')) --}}
+                                                            <button type="submit" class="btn-icon">
+                                                                <span class="icon-bg icon-wishlist"></span>
+                                                            </button>
+                                                        </form>
                                                         <a href="#" class="btn-icon">
                                                             <span class="icon-bg icon-compare"></span>
                                                         </a>
@@ -293,16 +301,23 @@
                                                         @csrf
                                                         <input type="hidden" name="product_id"
                                                             value="{{ $product->id }}">
-                                                        <input type="number" name="quantity" value="1"
-                                                            min="1" class="quantity-input">
+                                                        {{-- <input type="number" name="quantity" value="1"
+                                                            min="1" class="quantity-input"> --}}
                                                         <button type="submit" class="btn-icon"
                                                             style="background: none;">
                                                             <span class="icon-bg icon-cart"></span>
                                                         </button>
                                                     </form>
-                                                    <a href="#" class="btn-icon">
-                                                        <span class="icon-bg icon-wishlist"></span>
-                                                    </a>
+                                                    <form action="{{ route('wishlist.add', $product->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="product_id"
+                                                            value="{{ $product->id }}">
+                                                        
+                                                        <button type="submit" class="btn-icon" style="background: none;">
+                                                            <span class="icon-bg icon-wishlist"></span>
+                                                        </button>
+                                                    </form>
                                                     <a href="#" class="btn-icon">
                                                         <span class="icon-bg icon-compare"></span>
                                                     </a>
